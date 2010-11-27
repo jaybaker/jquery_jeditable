@@ -5,11 +5,9 @@ $.editable.addInputType('datepicker', {
   element: function(settings, original) {
       var input = $('<input />');
 
-      input.datepicker({
-        onSelect: function(dateText, inst) {
-          $(this).parents("form").submit();
-        }
-      });
+      var options = settings.dateoptions;
+      
+      input.datepicker(options);
       
       $(this).append(input);
       return (input);
